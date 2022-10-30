@@ -1,3 +1,168 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
 img {
   width: 100px;
+}
+
+.wraper {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.header__color {
+  background-color: rgb(85, 87, 85);
+}
+
+.container {
+  max-width: 1450px;
+  margin: 0px auto;
+}
+
+.header__bloks {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(85, 87, 85);
+  color: white;
+  align-items: center;
+  padding: 10px 0;
+}
+.header__bloks img {
+  width: 30px;
+}
+
+.blok__menu {
+  padding: 5px;
+  transition-duration: 0.3s;
+  border-radius: 10px;
+}
+.blok__menu:hover {
+  background-color: rgba(255, 255, 255, 0.185);
+  cursor: pointer;
+}
+
+.logo__image img {
+  width: 50px;
+}
+.logo__image::after {
+  content: "SHOP";
+  font-size: 40px;
+  position: relative;
+  top: 3px;
+}
+
+.blok__catalog {
+  padding: 10px;
+  padding-right: 20px;
+  background-color: rgba(255, 255, 255, 0.196);
+  border-radius: 10px;
+  transition-duration: 0.3s;
+}
+.blok__catalog::after {
+  content: "Каталог";
+  font-size: 25px;
+  position: relative;
+  top: 4px;
+  left: 10px;
+}
+.blok__catalog:hover {
+  background-color: rgba(255, 255, 255, 0.499);
+  cursor: pointer;
+}
+
+.blok__search input {
+  width: 500px;
+}
+
+.content {
+  flex: 1 1 auto;
 }

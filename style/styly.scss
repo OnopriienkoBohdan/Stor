@@ -1,3 +1,106 @@
+@import "onul.scss";
+
 img {
   width: 100px;
+}
+
+.wraper {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.header {
+}
+
+.header__color {
+  background-color: rgb(85, 87, 85);
+}
+
+.container {
+  max-width: 1450px;
+  margin: 0px auto;
+}
+
+.heder__row {
+}
+.header__bloks {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(85, 87, 85);
+  img {
+    width: 30px;
+  }
+  color: white;
+  align-items: center;
+  padding: 10px 0;
+}
+.blok__menu {
+  padding: 5px;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.185);
+    cursor: pointer;
+    // transition-duration: 0.3s;
+  }
+  transition-duration: 0.3s;
+  border-radius: 10px;
+}
+.menu__image {
+}
+.blok__logo {
+}
+.logo__image {
+  img {
+    width: 50px;
+  }
+  &::after {
+    content: "SHOP";
+    font-size: 40px;
+    position: relative;
+    top: 3px;
+  }
+}
+.logo__text {
+}
+.blok__catalog {
+  &::after {
+    content: "Каталог";
+    font-size: 25px;
+    position: relative;
+    top: 4px;
+    left: 10px;
+  }
+  padding: 10px;
+  padding-right: 20px;
+  background-color: rgba(255, 255, 255, 0.196);
+  border-radius: 10px;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.499);
+    cursor: pointer;
+  }
+  transition-duration: 0.3s;
+}
+.blok__search {
+  input {
+    width: 500px;
+  }
+}
+.blok__lenguage {
+}
+.blok__profile {
+}
+.profil__image {
+}
+.blok__basket {
+}
+.basket__image {
+}
+.header__under {
+}
+.under__list {
+}
+
+.content {
+  flex: 1 1 auto;
 }
