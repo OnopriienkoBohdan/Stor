@@ -16,6 +16,8 @@ img {
 
 .header__color {
   background-color: rgb(85, 87, 85);
+  position: fixed;
+  width: 100%;
 }
 
 .container {
@@ -155,6 +157,7 @@ img {
 .basket__image {
 }
 .header__under {
+  margin-top: 80px;
   h1 {
     font-size: 50px;
   }
@@ -180,6 +183,8 @@ img {
 .menu-bar__colum {
   display: none;
   width: 300px;
+  top: 0;
+  bottom: 0;
   position: fixed;
   background-color: white;
   box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.573);
@@ -237,6 +242,8 @@ img {
   }
   img {
     width: 10px;
+    margin: 5px;
+    margin-left: 0;
   }
 }
 .brend__list {
@@ -259,6 +266,11 @@ img {
 }
 
 .center__row {
+  // display: flex;
+  // flex-wrap: wrap;
+}
+
+.bloks {
   display: flex;
   flex-wrap: wrap;
 }
