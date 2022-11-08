@@ -1,9 +1,5 @@
 @import "onul.scss";
 
-img {
-  width: 100px;
-}
-
 .wraper {
   display: flex;
   min-height: 100%;
@@ -15,13 +11,15 @@ img {
 }
 
 .header__color {
-  background-color: rgb(85, 87, 85);
   position: fixed;
   width: 100%;
+  z-index: 1;
+  background-color: rgb(85, 87, 85);
 }
 
 .container {
-  max-width: 1450px;
+  max-width: 1470px;
+  padding: 0 10px;
   margin: 0px auto;
 }
 
@@ -29,8 +27,6 @@ img {
 }
 .header__bloks {
   display: flex;
-  justify-content: space-between;
-  background-color: rgb(85, 87, 85);
   img {
     width: 30px;
   }
@@ -52,6 +48,7 @@ img {
 .blok__logo {
 }
 .logo__image {
+  width: 160px;
   img {
     width: 50px;
   }
@@ -66,6 +63,10 @@ img {
 .logo__text {
 }
 .blok__catalog {
+  width: 250px;
+  img {
+    margin-left: 10px;
+  }
   &::after {
     content: "Каталог";
     font-size: 25px;
@@ -83,16 +84,20 @@ img {
   }
   transition-duration: 0.3s;
 }
+
 .blok__search {
+  display: flex;
+  width: 100%;
   img {
     position: relative;
-    left: 25px;
-    bottom: -7px;
-    width: 20px;
+    right: -27px;
+    bottom: -4px;
+    width: 25px;
+    height: 25px;
   }
   input {
     padding: 10px 30px;
-    width: 700px;
+    width: 100%;
     height: 35px;
     font-size: 17px;
     border-radius: 5px 0 0 5px;
@@ -103,6 +108,11 @@ img {
     padding: 5px 10px 8px 10px;
     color: white;
     font-size: 20px;
+    p {
+      position: relative;
+      left: -1px;
+      bottom: -2px;
+    }
     &:hover {
       background-color: rgb(4, 179, 42);
     }
@@ -129,16 +139,16 @@ img {
   }
 }
 .blok__profile {
-  img {
-    width: 20px;
-  }
   padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
   &:hover {
     background-color: rgba(255, 255, 255, 0.185);
-    cursor: pointer;
+  }
+  img {
+    width: 25px;
   }
   transition-duration: 0.3s;
-  border-radius: 10px;
 }
 .profil__image {
 }
@@ -154,17 +164,42 @@ img {
   transition-duration: 0.3s;
   border-radius: 10px;
 }
-.basket__image {
-}
+
 .header__under {
   margin-top: 80px;
   h1 {
     font-size: 50px;
   }
 }
+
 .under__list {
+  margin: 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  select {
+    border: 2px rgba(66, 73, 136, 0.541) solid;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  option {
+    font-size: 15px;
+  }
+}
+.under__filter {
+  background-color: rgb(89, 89, 230);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 130px;
+  font-size: 20px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  img {
+    width: 20px;
+  }
 }
 
 .content {
@@ -233,17 +268,39 @@ img {
 .rid-bar {
   border: 2px rgba(66, 73, 136, 0.541) solid;
   border-left: 0;
-  padding: 10px 0px 0 0;
   h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
     font-size: 30px;
+    padding: 10px;
+    &:hover {
+      color: rgb(239, 114, 114);
+      img {
+        opacity: 0.7;
+      }
+    }
+    img {
+      width: 20px;
+      opacity: 0.3;
+    }
   }
   li {
+    cursor: pointer;
+    padding: 7px 0 7px 10px;
+    margin: 0 10px 0 0;
     font-size: 20px;
-  }
-  img {
-    width: 10px;
-    margin: 5px;
-    margin-left: 0;
+    &:hover {
+      background-color: rgba(231, 231, 255, 0.504);
+      border-radius: 5px;
+    }
+    transition-duration: 0.3s;
+    img {
+      width: 15px;
+      opacity: 0.3;
+      margin: 2px 5px 0 0;
+    }
   }
 }
 .brend__list {
@@ -256,21 +313,200 @@ img {
 }
 
 .line {
-  margin-bottom: 10px;
+  margin-top: 15px;
   height: 2px;
   width: 250px;
   background-color: rgba(66, 73, 136, 0.541);
 }
-
 .center {
 }
 
 .center__row {
-  // display: flex;
-  // flex-wrap: wrap;
 }
 
 .bloks {
   display: flex;
   flex-wrap: wrap;
+  border-top: 2px rgb(66, 73, 136, 0.541) solid;
+}
+
+.blok__item {
+  width: 239.6px;
+  border: 2px rgb(66, 73, 136, 0.541) solid;
+  border-left: 0;
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: white;
+  transition-duration: 0.1s;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.385);
+    border: 0;
+    transition-duration: 0.4s;
+  }
+}
+
+.item__image {
+  img {
+    object-fit: cover;
+    width: 200px;
+    height: 150px;
+  }
+}
+.item__title {
+  margin: 20px 0;
+  font-size: 20px;
+}
+.item_cost {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buy {
+  cursor: pointer;
+  padding: 7px;
+  transition-duration: 0.3s;
+  &:hover {
+    background-color: rgba(231, 231, 255, 0.504);
+    border-radius: 30%;
+  }
+  img {
+    position: relative;
+    left: -3px;
+    width: 30px;
+  }
+}
+
+.footer {
+  margin-top: 100px;
+  padding-top: 30px;
+  background-color: rgb(238, 237, 237);
+}
+.container {
+}
+.footer__row {
+  display: flex;
+}
+.footer__bloks {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  li {
+    color: rgb(100, 107, 174);
+    font-size: 17px;
+    margin: 10px 0;
+    cursor: pointer;
+    &:hover {
+      color: rgb(239, 114, 114);
+      text-decoration: underline;
+    }
+  }
+}
+
+.grey {
+  font-size: 13px;
+  color: grey;
+}
+
+.blok__time {
+  width: 300px;
+  margin-bottom: 20px;
+  p {
+    color: rgb(100, 107, 174);
+    font-size: 17px;
+    cursor: pointer;
+    &:hover {
+      color: rgb(239, 114, 114);
+    }
+    transition-duration: 0.3s;
+  }
+}
+
+.footer__under {
+  border-top: 1px rgba(0, 0, 0, 0.151) solid;
+}
+.under__text {
+  margin: 20px 0;
+  :last-child {
+    color: grey;
+    margin-left: 10px;
+    display: inline;
+  }
+}
+
+@media (max-width: 1280px) {
+  .logo__image {
+    width: 70px;
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .logo__image {
+    width: 30px;
+  }
+  .blok__catalog {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .rid-bar {
+    display: none;
+  }
+  .footer__bloks {
+    flex-wrap: wrap;
+  }
+  .blok {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .under__filter {
+    display: none;
+  }
+  .under__list {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer__row {
+    flex-direction: column;
+  }
+  .blok {
+    flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 475px) {
+  .under__filter {
+    width: 50%;
+    margin-right: 20px;
+  }
+  .under__select {
+    width: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+  .blok__logo {
+    display: none;
+  }
+  .blok__lenguage {
+    display: none;
+  }
+  .blok__profile {
+    display: none;
+  }
 }
