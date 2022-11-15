@@ -1,20 +1,34 @@
 const object = document.querySelector(".wraper");
+//////////////////////////////////
+document.addEventListener("click", function (catalog) {
+  if (catalog.target.closest(".blok__catalog")) {
+    object.classList.toggle("_activCatalog");
+  }
+});
 
-// document.addEventListener("click", function (event) {
-//   if (event.target.closest(".")) {
-//     object.classList.toggle("_activCatalog");
-//   }
-// });
+document.addEventListener("keydown", function (catalog) {
+  if (catalog.code == "Escape") {
+    object.classList.remove("_activCatalog");
+  }
+});
 
+const menuCatalog = document.querySelector(".menu__catalog");
+
+menuCatalog.addEventListener("click", function () {
+  object.classList.add("_activCatalog");
+  object.classList.remove("_activMenu");
+});
+
+/////////////////////////////////
 document.addEventListener("click", function (menu) {
   if (menu.target.closest(".blok__menu")) {
     object.classList.toggle("_activMenu");
   }
   if (menu.target.closest(".cross")) {
-    object.classList.toggle("_activMenu");
+    object.classList.remove("_activMenu");
   }
-  if (menu.target.closest(".menu-bar__overlayA")) {
-    object.classList.toggle("_activMenu");
+  if (menu.target.closest(".menu-bar__overlay")) {
+    object.classList.remove("_activMenu");
   }
 });
 
@@ -23,17 +37,17 @@ document.addEventListener("keydown", function (menu) {
     object.classList.remove("_activMenu");
   }
 });
-
+///////////////////////////
 document.addEventListener("click", function (filter) {
   if (filter.target.closest(".under__filter")) {
     object.classList.toggle("_activFilter");
   }
 
-  if (filter.target.closest(".menu-bar__overlayB")) {
-    object.classList.toggle("_activFilter");
+  if (filter.target.closest(".menu-bar__overlay")) {
+    object.classList.remove("_activFilter");
   }
 });
-
+/////////////////////////
 const brend = document.querySelector(".brend__list");
 const brendHeader = brend.firstElementChild;
 
@@ -97,3 +111,186 @@ matriksHeader.addEventListener(
   },
   false
 );
+
+//////////////////////////////
+const brend1 = document.querySelector("#brend1");
+
+brend1.addEventListener("mouseover", function () {
+  object.classList.add("_opasityBrend1");
+});
+brend1.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityBrend1");
+});
+brend1.addEventListener("click", function () {
+  object.classList.toggle("_activeBrend1");
+});
+
+const brend2 = document.querySelector("#brend2");
+
+brend2.addEventListener("mouseover", function () {
+  object.classList.add("_opasityBrend2");
+});
+brend2.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityBrend2");
+});
+brend2.addEventListener("click", function () {
+  object.classList.toggle("_activeBrend2");
+});
+
+const brend3 = document.querySelector("#brend3");
+
+brend3.addEventListener("mouseover", function () {
+  object.classList.add("_opasityBrend3");
+});
+brend3.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityBrend3");
+});
+brend3.addEventListener("click", function () {
+  object.classList.toggle("_activeBrend3");
+});
+
+const brend4 = document.querySelector("#brend4");
+
+brend4.addEventListener("mouseover", function () {
+  object.classList.add("_opasityBrend4");
+});
+brend4.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityBrend4");
+});
+brend4.addEventListener("click", function () {
+  object.classList.toggle("_activeBrend4");
+});
+
+///////////////////////////////
+const gerts1 = document.querySelector("#gerts1");
+
+gerts1.addEventListener("mouseover", function () {
+  object.classList.add("_opasityGerts1");
+});
+gerts1.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityGerts1");
+});
+gerts1.addEventListener("click", function () {
+  object.classList.toggle("_activeGerts1");
+});
+
+const gerts2 = document.querySelector("#gerts2");
+
+gerts2.addEventListener("mouseover", function () {
+  object.classList.add("_opasityGerts2");
+});
+gerts2.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityGerts2");
+});
+gerts2.addEventListener("click", function () {
+  object.classList.toggle("_activeGerts2");
+});
+
+const gerts3 = document.querySelector("#gerts3");
+
+gerts3.addEventListener("mouseover", function () {
+  object.classList.add("_opasityGerts3");
+});
+gerts3.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityGerts3");
+});
+gerts3.addEventListener("click", function () {
+  object.classList.toggle("_activeGerts3");
+});
+
+const gerts4 = document.querySelector("#gerts4");
+
+gerts4.addEventListener("mouseover", function () {
+  object.classList.add("_opasityGerts4");
+});
+gerts4.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityGerts4");
+});
+gerts4.addEventListener("click", function () {
+  object.classList.toggle("_activeGerts4");
+});
+
+//////////////////////////
+const size1 = document.querySelector("#size1");
+
+size1.addEventListener("mouseover", function () {
+  object.classList.add("_opasitySize1");
+});
+size1.addEventListener("mouseout", function () {
+  object.classList.remove("_opasitySize1");
+});
+size1.addEventListener("click", function () {
+  object.classList.toggle("_activeSize1");
+});
+
+const size2 = document.querySelector("#size2");
+
+size2.addEventListener("mouseover", function () {
+  object.classList.add("_opasitySize2");
+});
+size2.addEventListener("mouseout", function () {
+  object.classList.remove("_opasitySize2");
+});
+size2.addEventListener("click", function () {
+  object.classList.toggle("_activeSize2");
+});
+
+const size3 = document.querySelector("#size3");
+
+size3.addEventListener("mouseover", function () {
+  object.classList.add("_opasitySize3");
+});
+size3.addEventListener("mouseout", function () {
+  object.classList.remove("_opasitySize3");
+});
+size3.addEventListener("click", function () {
+  object.classList.toggle("_activeSize3");
+});
+
+const size4 = document.querySelector("#size4");
+
+size4.addEventListener("mouseover", function () {
+  object.classList.add("_opasitySize4");
+});
+size4.addEventListener("mouseout", function () {
+  object.classList.remove("_opasitySize4");
+});
+size4.addEventListener("click", function () {
+  object.classList.toggle("_activeSize4");
+});
+///////////////////////////
+const matriks1 = document.querySelector("#matriks1");
+
+matriks1.addEventListener("mouseover", function () {
+  object.classList.add("_opasityMatriks1");
+});
+matriks1.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityMatriks1");
+});
+matriks1.addEventListener("click", function () {
+  object.classList.toggle("_activeMatriks1");
+});
+
+const matriks2 = document.querySelector("#matriks2");
+
+matriks2.addEventListener("mouseover", function () {
+  object.classList.add("_opasityMatriks2");
+});
+matriks2.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityMatriks2");
+});
+matriks2.addEventListener("click", function () {
+  object.classList.toggle("_activeMatriks2");
+});
+
+const matriks3 = document.querySelector("#matriks3");
+
+matriks3.addEventListener("mouseover", function () {
+  object.classList.add("_opasityMatriks3");
+});
+matriks3.addEventListener("mouseout", function () {
+  object.classList.remove("_opasityMatriks3");
+});
+matriks3.addEventListener("click", function () {
+  object.classList.toggle("_activeMatriks3");
+});
