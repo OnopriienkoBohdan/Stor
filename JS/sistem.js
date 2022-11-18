@@ -83,6 +83,13 @@ document.addEventListener("click", function (catalog) {
   }
 });
 
+document
+  .querySelector(".blok__catalog-cross")
+  .addEventListener("click", function () {
+    object.classList.toggle("_activCatalog");
+    body.style.overflow = "scroll";
+  });
+
 document.addEventListener("keydown", function (catalog) {
   if (catalog.code == "Escape") {
     object.classList.remove("_activCatalog");
