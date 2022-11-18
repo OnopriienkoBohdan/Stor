@@ -90,6 +90,12 @@ document.addEventListener("keydown", function (catalog) {
   }
 });
 
+document
+  .querySelector(".menu-bar__overlay")
+  .addEventListener("click", function () {
+    object.classList.remove("_activCatalog");
+  });
+
 const menuCatalog = document.querySelector(".menu__catalog");
 
 menuCatalog.addEventListener("click", function () {
@@ -110,6 +116,7 @@ document.addEventListener("click", function (menu) {
   if (menu.target.closest(".blok__menu")) {
     body.style.overflow = "hidden";
     object.classList.toggle("_activMenu");
+    object.classList.remove("_activCatalog");
   }
   if (menu.target.closest(".cross")) {
     body.style.overflow = "scroll";
