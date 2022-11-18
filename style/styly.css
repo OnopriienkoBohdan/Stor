@@ -172,32 +172,6 @@ body {
   cursor: pointer;
 }
 
-.blok__catalog-cross {
-  display: none;
-  width: 250px;
-  padding: 10px;
-  padding-right: 20px;
-  background-color: rgba(255, 255, 255, 0.196);
-  border-radius: 10px;
-  transition-duration: 0.3s;
-}
-.blok__catalog-cross img {
-  margin-left: 10px;
-  width: 30px;
-  height: 30px;
-}
-.blok__catalog-cross::after {
-  content: "Каталог";
-  font-size: 25px;
-  position: relative;
-  top: 4px;
-  left: 10px;
-}
-.blok__catalog-cross:hover {
-  background-color: rgba(255, 255, 255, 0.499);
-  cursor: pointer;
-}
-
 .blok__img {
   display: block;
 }
@@ -212,14 +186,6 @@ body {
 
 .wraper._activCatalog .blok__cross {
   display: block;
-}
-
-._activCatalog .blok__catalog {
-  display: none;
-}
-
-._activCatalog .blok__catalog-cross {
-  display: flex;
 }
 
 .blok__search {
@@ -1064,11 +1030,13 @@ body {
     flex: 0 0 50%;
   }
 }
-@media (min-width: 1000px) {
-  .filter-exit {
+@media (min-width: 1050px) {
+  .katalog__exity {
     display: none;
   }
-  .katalog__exity {
+}
+@media (min-width: 1000px) {
+  .filter-exit {
     display: none;
   }
   .under__filter {

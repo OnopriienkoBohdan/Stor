@@ -79,29 +79,14 @@ const body = document.body;
 document.addEventListener("click", function (catalog) {
   if (catalog.target.closest(".blok__catalog")) {
     object.classList.toggle("_activCatalog");
-    body.style.overflow = "hidden";
   }
 });
-
-document
-  .querySelector(".blok__catalog-cross")
-  .addEventListener("click", function () {
-    object.classList.toggle("_activCatalog");
-    body.style.overflow = "scroll";
-  });
 
 document.addEventListener("keydown", function (catalog) {
   if (catalog.code == "Escape") {
     object.classList.remove("_activCatalog");
-    body.style.overflow = "scroll";
   }
 });
-
-document
-  .querySelector(".menu-bar__overlay")
-  .addEventListener("click", function () {
-    object.classList.remove("_activCatalog");
-  });
 
 const menuCatalog = document.querySelector(".menu__catalog");
 
