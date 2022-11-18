@@ -1,14 +1,92 @@
+document.querySelector("#data-priority").onclick = priority;
+
+function priority() {
+  let center = document.querySelector(".center__row");
+  document.querySelector("#data-priority").style.backgroundColor =
+    "rgba(128, 128, 128, 0.436)";
+  document.querySelector("#data-prise-low").style.backgroundColor =
+    "rgba(128, 128, 128, 0.142)";
+  document.querySelector("#data-prise-high").style.backgroundColor =
+    "rgba(128, 128, 128, 0.142)";
+  for (let i = 0; i < center.children.length; i++) {
+    for (let j = i; j < center.children.length; j++) {
+      if (
+        +center.children[i].getAttribute("data-priority") >
+        +center.children[j].getAttribute("data-priority")
+      ) {
+        replace = center.replaceChild(center.children[j], center.children[i]);
+        after(replace, center.children[i]);
+      }
+    }
+  }
+}
+
+function after(elem, refElem) {
+  return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
+}
+
+document.querySelector("#data-prise-low").onclick = low;
+
+function low() {
+  document.querySelector("#data-priority").style.backgroundColor =
+    "rgba(128, 128, 128, 0.142)";
+  document.querySelector("#data-prise-low").style.backgroundColor =
+    "rgba(128, 128, 128, 0.436)";
+  document.querySelector("#data-prise-high").style.backgroundColor =
+    "rgba(128, 128, 128, 0.142)";
+  let center = document.querySelector(".center__row");
+  for (let i = 0; i < center.children.length; i++) {
+    for (let j = i; j < center.children.length; j++) {
+      if (
+        +center.children[i].getAttribute("data-prise") >
+        +center.children[j].getAttribute("data-prise")
+      ) {
+        replace = center.replaceChild(center.children[j], center.children[i]);
+        after(replace, center.children[i]);
+      }
+    }
+  }
+}
+
+document.querySelector("#data-prise-high").onclick = high;
+
+function high() {
+  document.querySelector("#data-priority").style.backgroundColor =
+    "rgba(128, 128, 128, 0.142)";
+  document.querySelector("#data-prise-low").style.backgroundColor =
+    "rgba(128, 128, 128, 0.142)";
+  document.querySelector("#data-prise-high").style.backgroundColor =
+    "rgba(128, 128, 128, 0.436)";
+  let center = document.querySelector(".center__row");
+  for (let i = 0; i < center.children.length; i++) {
+    for (let j = i; j < center.children.length; j++) {
+      if (
+        +center.children[i].getAttribute("data-prise") <
+        +center.children[j].getAttribute("data-prise")
+      ) {
+        replace = center.replaceChild(center.children[j], center.children[i]);
+        after(replace, center.children[i]);
+      }
+    }
+  }
+}
+
+/////////////////////////////////
 const object = document.querySelector(".wraper");
+const body = document.body;
+
 //////////////////////////////////
 document.addEventListener("click", function (catalog) {
   if (catalog.target.closest(".blok__catalog")) {
     object.classList.toggle("_activCatalog");
+    body.style.overflow = "hidden";
   }
 });
 
 document.addEventListener("keydown", function (catalog) {
   if (catalog.code == "Escape") {
     object.classList.remove("_activCatalog");
+    body.style.overflow = "scroll";
   }
 });
 
@@ -16,36 +94,55 @@ const menuCatalog = document.querySelector(".menu__catalog");
 
 menuCatalog.addEventListener("click", function () {
   object.classList.add("_activCatalog");
+  body.style.overflow = "hidden";
   object.classList.remove("_activMenu");
+});
+
+const exity = document.querySelector(".katalog__exity");
+
+exity.addEventListener("click", function () {
+  body.style.overflow = "scroll";
+  object.classList.remove("_activCatalog");
 });
 
 /////////////////////////////////
 document.addEventListener("click", function (menu) {
   if (menu.target.closest(".blok__menu")) {
+    body.style.overflow = "hidden";
     object.classList.toggle("_activMenu");
   }
   if (menu.target.closest(".cross")) {
+    body.style.overflow = "scroll";
     object.classList.remove("_activMenu");
   }
   if (menu.target.closest(".menu-bar__overlay")) {
+    body.style.overflow = "scroll";
     object.classList.remove("_activMenu");
   }
 });
 
 document.addEventListener("keydown", function (menu) {
   if (menu.code == "Escape") {
+    body.style.overflow = "scroll";
     object.classList.remove("_activMenu");
   }
 });
 ///////////////////////////
 document.addEventListener("click", function (filter) {
   if (filter.target.closest(".under__filter")) {
+    body.style.overflow = "hidden";
     object.classList.toggle("_activFilter");
   }
 
   if (filter.target.closest(".menu-bar__overlay")) {
+    body.style.overflow = "scroll";
     object.classList.remove("_activFilter");
   }
+});
+
+document.querySelector(".filter-exit").addEventListener("click", function () {
+  body.style.overflow = "scroll";
+  object.classList.remove("_activFilter");
 });
 /////////////////////////
 const brend = document.querySelector(".brend__list");

@@ -1,5 +1,9 @@
 @import "onul.scss";
 
+body {
+  overflow: scroll;
+}
+
 .wraper {
   display: flex;
   min-height: 100%;
@@ -214,11 +218,26 @@
   }
 }
 
+.under__button {
+  display: flex;
+  button {
+    background-color: rgba(128, 128, 128, 0.142);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
+    margin: 5px;
+    &:hover {
+      background-color: rgba(128, 128, 128, 0.436);
+    }
+  }
+}
+
 .katalog-window {
   position: fixed;
   top: 14%;
   width: 96%;
-  height: 600px;
+  height: 500px;
   background-color: white;
   z-index: 2;
   border-radius: 10px;
@@ -228,6 +247,18 @@
   p {
     font-size: 25px;
     margin-top: 10px;
+  }
+}
+
+.katalog__exity {
+  display: block;
+  cursor: pointer;
+  background-color: grey;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 10px;
+  img {
+    width: 50px;
   }
 }
 
@@ -266,6 +297,7 @@
 }
 
 .menu__catalog {
+  border: 1px black solid;
   margin: 10px;
   img {
     width: 30px;
@@ -372,6 +404,15 @@
       width: 15px;
       margin: 2px 5px 0 0;
     }
+  }
+}
+
+.filter-exit {
+  display: flex;
+  justify-content: flex-end;
+  background-color: grey;
+  img {
+    width: 40px;
   }
 }
 
@@ -1101,6 +1142,12 @@
   }
 }
 
+@media (min-width: 1500px) {
+  .katalog-window {
+    width: 1450px;
+  }
+}
+
 @media (max-width: 1280px) {
   .logo__image {
     width: 70px;
@@ -1146,6 +1193,12 @@
 }
 
 @media (min-width: 1000px) {
+  .filter-exit {
+    display: none;
+  }
+  .katalog__exity {
+    display: none;
+  }
   .under__filter {
     display: none;
   }
@@ -1168,6 +1221,12 @@
   }
   .blok {
     flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 655px) {
+  .under__button {
+    flex-direction: column;
   }
 }
 

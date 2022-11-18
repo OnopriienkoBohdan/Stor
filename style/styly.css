@@ -88,6 +88,10 @@ h6 {
 }
 
 /*--------------------*/
+body {
+  overflow: scroll;
+}
+
 .wraper {
   display: flex;
   min-height: 100%;
@@ -302,11 +306,26 @@ h6 {
   width: 20px;
 }
 
+.under__button {
+  display: flex;
+}
+.under__button button {
+  background-color: rgba(128, 128, 128, 0.142);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 15px;
+  margin: 5px;
+}
+.under__button button:hover {
+  background-color: rgba(128, 128, 128, 0.436);
+}
+
 .katalog-window {
   position: fixed;
   top: 14%;
   width: 96%;
-  height: 600px;
+  height: 500px;
   background-color: white;
   z-index: 2;
   border-radius: 10px;
@@ -317,6 +336,18 @@ h6 {
 .katalog-window p {
   font-size: 25px;
   margin-top: 10px;
+}
+
+.katalog__exity {
+  display: block;
+  cursor: pointer;
+  background-color: grey;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 10px;
+}
+.katalog__exity img {
+  width: 50px;
 }
 
 .wraper._activCatalog .katalog-window {
@@ -354,6 +385,7 @@ h6 {
 }
 
 .menu__catalog {
+  border: 1px black solid;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -458,6 +490,15 @@ h6 {
 .rid-bar li img {
   width: 15px;
   margin: 2px 5px 0 0;
+}
+
+.filter-exit {
+  display: flex;
+  justify-content: flex-end;
+  background-color: grey;
+}
+.filter-exit img {
+  width: 40px;
 }
 
 #brend1 .brend__img1 img {
@@ -942,6 +983,11 @@ h6 {
   display: inline;
 }
 
+@media (min-width: 1500px) {
+  .katalog-window {
+    width: 1450px;
+  }
+}
 @media (max-width: 1280px) {
   .logo__image {
     width: 70px;
@@ -984,6 +1030,12 @@ h6 {
   }
 }
 @media (min-width: 1000px) {
+  .filter-exit {
+    display: none;
+  }
+  .katalog__exity {
+    display: none;
+  }
   .under__filter {
     display: none;
   }
@@ -1003,6 +1055,11 @@ h6 {
   }
   .blok {
     flex: 0 0 100%;
+  }
+}
+@media (max-width: 655px) {
+  .under__button {
+    flex-direction: column;
   }
 }
 @media (max-width: 475px) {
