@@ -92,7 +92,7 @@ const menuCatalog = document.querySelector(".menu__catalog");
 
 menuCatalog.addEventListener("click", function () {
   object.classList.add("_activCatalog");
-  body.style.overflow = "hidden";
+  // body.style.overflow = "hidden";
   object.classList.remove("_activMenu");
 });
 
@@ -106,7 +106,7 @@ exity.addEventListener("click", function () {
 /////////////////////////////////
 document.addEventListener("click", function (menu) {
   if (menu.target.closest(".blok__menu")) {
-    body.style.overflow = "hidden";
+    // body.style.overflow = "hidden";
     object.classList.toggle("_activMenu");
     object.classList.remove("_activCatalog");
   }
